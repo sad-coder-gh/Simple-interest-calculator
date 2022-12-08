@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Interest Calculator</title>
+    <style>
+      /* Define some basic styles for the page */
+      body {
+        font-family: sans-serif;
+        background-color:aquamarine;
+        color: black;
+      }
+      input, button {
+        font-size: 16px;
+        padding: 5px 10px;
+        margin: 5px;
+      }
+      #result {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple Interest Calculator</h1>
+    <form>
+      <label>Principal:</label>
+      <input type="text" id="principal" />
+      <br />
+      <label>Rate:</label>
+      <input type="text" id="rate" />
+      <br />
+      <label>Time:</label>
+      <input type="text" id="time" />
+      <br />
+      <button type="button" onclick="calculateInterest()">Calculate Interest</button>
+    </form>
+    <p id="result"></p>
+    <fieldset>© Everyone Can Get Rich
+        This Calculator belongs to Usman Abubakar</fieldset>
+
+    <script>
+        
+      // Define function to calculate simple interest
+      function simpleInterest(p, r, t) {
+        // Calculate simple interest using the formula:
+        // interest = principal * rate * time
+        var interest = p * r * t;
+
+        // Return the calculated interest
+        return interest;
+      }
+
+      // Define function to handle clicks on the "Calculate Interest" button
+      function calculateInterest() {
+        // Get the principal amount from the input field
+        var principal = document.getElementById('principal').value;
+
+        // Get the interest rate from the input field
+        var rate = document.getElementById('rate').value;
+
+        // Get the time period from the input field
+        var time = document.getElementById('time').value;
+
+        // Calculate the simple interest on the given principal, rate, and time
+        var interest = simpleInterest(principal, rate, time);
+
+        // Get the element to display the result
+        var resultEl = document.getElementById('result');
+
+        // Set the result element's text to the calculated interest
+        resultEl.innerText = 'Interest: ' + interest;
+      }
+    </script>
+  </body>
+</html>
